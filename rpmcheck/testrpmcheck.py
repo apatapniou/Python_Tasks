@@ -1,10 +1,10 @@
 import re
 import wget
-file_new = open('C:\\Users\Aliaksandr_Patapniou\Documents\\test.txt')
+file_new = open('/home/apatapniou/Work/test/curlgrep')
 rpmname = []
 rpmname_new = []
 
-file_old = open('C:\\Users\Aliaksandr_Patapniou\Documents\\test1.txt', 'r+')
+file_old = open('/home/apatapniou/Work/test/installed_rpm', 'r+')
 site = 'http://mirror.datacenter.by/pub/fedoraproject.org/linux/releases/29/Everything/x86_64/os/Packages/k/%s'
 
 for line in file_old:
@@ -22,7 +22,7 @@ diffrpm = list(set(rpmname_new).difference(set(rpmname)))
 for i in range(len(diffrpm)):
     rpm = ''.join(re.findall(r'kernel-.*.rpm', diffrpm[i]))
     url = site % rpm
-    wget.download(url, 'C:\\Users\Aliaksandr_Patapniou\Documents\\%s' % (rpm))
+    wget.download(url, '/home/apatapniou/Work/test/%s' % (rpm))
     file_old.write(diffrpm[i] + "\n")
 
 file_old.close()
