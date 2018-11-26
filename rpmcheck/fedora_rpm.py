@@ -1,6 +1,6 @@
 import re
 import wget
-file_new = open('/home/apatapniou/Work/test/curlgrep')
+file_new = open('/home/apatapniosfviegfiqwerfgqwer[fge[u/Work/test/curlgrep')
 rpmname = []
 rpmname_new = []
 
